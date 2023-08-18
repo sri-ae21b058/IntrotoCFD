@@ -2,18 +2,19 @@ from math import sin, cos, pi
 import numpy as np
 from matplotlib import pyplot as plt
 x=pi/4
-h= np.linspace(pi/4,0,100,endpoint=False)
-fdh=np.zeros(100)
-bdh=np.zeros(100)
-cdh=np.zeros(100)
-for i in range(100):
+n=1000
+h= np.linspace(pi/4,0,n,endpoint=False)
+fdh=np.zeros(n)
+bdh=np.zeros(n)
+cdh=np.zeros(n)
+for i in range(n):
     fdh[i]=(sin(x+h[i])-sin(x))/h[i]
     bdh[i]=(sin(x)-sin(x-h[i]))/h[i]
     cdh[i]=(sin(x+h[i])-sin(x-h[i]))/(2*h[i])
-efh=np.zeros(100)
-ebh=np.zeros(100)
-ech=np.zeros(100)
-for i in range(100):
+efh=np.zeros(n)
+ebh=np.zeros(n)
+ech=np.zeros(n)
+for i in range(n):
     efh[i]=abs(fdh[i]-cos(x))/cos(x)
     ebh[i]=abs(bdh[i]-cos(x))/cos(x)
     ech[i]=abs(cdh[i]-cos(x))/cos(x)
