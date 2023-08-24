@@ -18,6 +18,13 @@ for i in range(n):
     efh[i]=abs(fdh[i]-cos(x))/cos(x)
     ebh[i]=abs(bdh[i]-cos(x))/cos(x)
     ech[i]=abs(cdh[i]-cos(x))/cos(x)
+
+plt.figure(1)
 plt.plot(h,efh,'r',h,ebh,'b',h,ech,'g')
+plt.legend(['Forward','Backward','Central'])
+plt.show()
+
+plt.figure(2)
+plt.loglog(h,efh,'r',h,ebh,'b',h,ech,'g')
 plt.legend(['Forward','Backward','Central'])
 plt.show()
